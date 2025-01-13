@@ -11,24 +11,30 @@ namespace TodoAppWPFApp
     /// </summary>
     public class ToDoList
     {
-        private List<string> tasks = new List<string>();
+        private List<string> _tasks = new List<string>();
         public void AddToList(string task)
         {
-            tasks.Add(task);
+            _tasks.Add(task);
         }
-        public void RemoveTasks(int[] indexes)
+        public void RemoveTasks(List<string> tasks)
         {
-            foreach (int index in indexes)
+            for (int i = 0; i < _tasks.Count; i++)
             {
-                if (index >= 0 && index < tasks.Count)
+                for (int j = 0; j < tasks.Count; j++)
                 {
-                    tasks.RemoveAt(index);
+                    if (_tasks[i] == tasks[j])
+                    {
+                        _tasks.RemoveAt(i);
+                        tasks.RemoveAt(j);
+                        i--;
+                        break;
+                    }
                 }
             }
         }
         public List<string> GetAllTasks()
         {
-            return tasks;
+            return _tasks;
         }
 
     }

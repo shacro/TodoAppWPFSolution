@@ -28,15 +28,15 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Style="{StaticResource ExitApp}" x:Name="ShutDownButton" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,15,0"/>
+                <Button Style="{StaticResource ExitApp}" x:Name="ShutDownButton" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,15,0" Click="ShutDownButton_Click"/>
 
-                <TextBox Style="{StaticResource specialTextbox}" Grid.Column="0" Grid.Row="0" Margin="40,40,0,0"/>
+                <TextBox Style="{StaticResource specialTextbox}" x:Name="tasksTextBox" Grid.Column="0" Grid.Row="0" Margin="40,40,0,0"/>
 
-                <Button Style="{StaticResource ModStyledButton}" Grid.Row="0" Grid.Column="1" Margin="40,40,0,0" Content="Lägg till Uppgift"/>
+                <Button Style="{StaticResource ModStyledButton}" x:Name="addTaskButton" Grid.Row="0" Grid.Column="1" Margin="40,40,0,0" Content="Lägg till Uppgift" Click="addTaskButton_Click"/>
 
-                <ListBox Style="{StaticResource RoundListBox}" Grid.Row="1" Grid.ColumnSpan="2" Margin="40,20,0,20"/>
+                <ListBox Style="{StaticResource RoundListBox}" x:Name="tasksList" Grid.Row="1" Grid.ColumnSpan="2" Margin="40,20,0,20"/>
 
-                <Button Style="{StaticResource ModStyledButton}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,40" Content="Ta bort Uppgift"/>
+                <Button Style="{StaticResource ModStyledButton}" x:Name="removeTasksButton"  Grid.Row="2" Grid.Column="1" Margin="0,0,0,40" Content="Ta bort Uppgift" Click="removeTasksButton_Click"/>
 
             </Grid>
             
